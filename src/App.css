@@ -1,0 +1,41 @@
+.App {
+}
+
+.logo {
+  height: 110px;
+}
+
+.header {
+  background-color: #E0E0E0;
+  color: white;
+  height: 115px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.menu {
+  display: flex;
+  background-color: #2AB2D8;
+  color: white;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  height: 50px;
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+.content {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: large;
+}
+
