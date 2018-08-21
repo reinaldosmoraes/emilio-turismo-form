@@ -6,7 +6,7 @@ import '../App.css';
 class SocialMedia extends Component {
   render() {
     return (
-			<div className="social-media">
+			<div>
                 <a href="https://www.facebook.com/emilioturismo/" target="_blank">
 				    <img src={facebook_icon} className="logo-social-media" alt="logo facebook" />
                 </a>

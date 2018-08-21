@@ -44,25 +44,34 @@ class Content extends Component {
   	render() {
     return (
 		<div className="content">
-			<Form onSubmit={this.handleSubmit}>
-				<FormGroup>
-					<Label for="name">Nome:</Label>
+			<Form className="form" onSubmit={this.handleSubmit}>
+				<FormGroup className="form-group-container">
+					<Label className="label-container" for="name">Nome</Label>
 					<Input 
 						type="text"
 						name="name"
 						onChange={this.handleChange} />
 				</FormGroup>
 				
-				<FormGroup>
-					<Label for="email">Email:</Label>
+				<FormGroup className="form-group-container">
+					<Label className="label-container" for="email">Email</Label>
 					<Input 
 						type="email"
 						name="email"
 						onChange={this.handleChange} />
 				</FormGroup>
 
+				<FormGroup className="form-group-container">
+					<Label className="label-container" for="departureDate">Data de partida</Label>
+					
+						<DatePicker
+							onChange={this.onChange}
+							value={this.state.date} />
+					
+				</FormGroup>
+
 				<FormGroup>
-					<Label for="departureDate">Data de partida:</Label>
+					<Label for="arrivalDate">Data de chegada</Label>
 					<p>
 						<DatePicker
 							onChange={this.onChange}
@@ -70,17 +79,8 @@ class Content extends Component {
 					</p>
 				</FormGroup>
 
-				<FormGroup>
-					<Label for="arrivalDate">Data de chegada:</Label>
-					<p>
-						<DatePicker
-							onChange={this.onChange}
-							value={this.state.date} />
-					</p>
-				</FormGroup>
-
-				<FormGroup>
-					<Label for="numberOfPeople">Número de Pessoas:</Label>
+				<FormGroup className="form-group-container">
+					<Label className="label-container" for="numberOfPeople">Número de Pessoas</Label>
 					<Input type="select" name="numberOfPeople" id="numberOfPeople">
 						<option>1</option>
 						<option>2</option>
@@ -88,17 +88,21 @@ class Content extends Component {
 						<option>4</option>
 						<option>5</option>
 					</Input>
-					</FormGroup>
+				</FormGroup>
 
-				<FormGroup>
-					<Label for="message">Mensagem:</Label>
-					<Input 
+				<FormGroup className="form-group-container">
+					<Label className="label-container" for="message">Mensagem</Label>
+					<Input
 						type="textarea"
 						name="message"
 						onChange={this.handleChange} />
 				</FormGroup>
 
-				<Button className="submit-button">Solicitar Orçamento</Button>
+				<FormGroup className="form-group-container">
+					<Label className="label-button"></Label>
+					<Button className="submit-button">Solicitar Orçamento</Button>
+				</FormGroup>
+				
 			</Form>
 
 		</div>

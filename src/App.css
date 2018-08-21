@@ -22,10 +22,6 @@
   padding-top: 10px;
 }
 
-.social-media {
-
-}
-
 .logo-social-media {
   height: 40px;
   margin-left: 5px;
@@ -44,12 +40,30 @@
 }
 
 .content {
+  display: flex;
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 5px;
   padding-top: 20px;
   padding-bottom: 20px;
-  font-size: large;
+}
+
+.form {
+  flex: 1;
+}
+.form-group-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.label-container {
+  display: flex;
+  flex-direction: row;  
+  width: 20%;
+  justify-content: flex-end;
+  margin-right: 10px;
+  font-weight: bold;
 }
 
 .footer {
@@ -74,5 +88,25 @@
 }
 
 .submit-button {
-  width: 100%;
+  display: flex;
+  flex: 1;
+}
+.teste {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+.button {
+  margin: 0px;
+}
+
+.label-button {
+  display: flex;
+  flex-direction: row;  
+  width: 16.5%;
+  justify-content: flex-end;
+  margin-right: 10px;
+  font-weight: bold;
 }
