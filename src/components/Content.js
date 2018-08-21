@@ -41,67 +41,67 @@ class Content extends Component {
 		})
 	}
 
-  render() {
+  	render() {
     return (
-			<div className="content">
-				<Form onSubmit={this.handleSubmit}>
-					<FormGroup>
-						<Label for="name">Nome:</Label>
-						<Input 
-							type="text"
-							name="name"
-							onChange={this.handleChange} />
-					</FormGroup>
-					
-					<FormGroup>
-						<Label for="email">Email:</Label>
-						<Input 
-							type="email"
-							name="email"
-							onChange={this.handleChange} />
-					</FormGroup>
+		<div className="content">
+			<Form onSubmit={this.handleSubmit}>
+				<FormGroup>
+					<Label for="name">Nome:</Label>
+					<Input 
+						type="text"
+						name="name"
+						onChange={this.handleChange} />
+				</FormGroup>
+				
+				<FormGroup>
+					<Label for="email">Email:</Label>
+					<Input 
+						type="email"
+						name="email"
+						onChange={this.handleChange} />
+				</FormGroup>
 
-					<FormGroup>
-						<Label for="departureDate">Data de partida:</Label>
-						<p>
-							<DatePicker
-								onChange={this.onChange}
-								value={this.state.date} />
-						</p>
-					</FormGroup>
+				<FormGroup>
+					<Label for="departureDate">Data de partida:</Label>
+					<p>
+						<DatePicker
+							onChange={this.onChange}
+							value={this.state.date} />
+					</p>
+				</FormGroup>
 
-					<FormGroup>
-						<Label for="arrivalDate">Data de chegada:</Label>
-						<p>
-							<DatePicker
-								onChange={this.onChange}
-								value={this.state.date} />
-						</p>
-					</FormGroup>
+				<FormGroup>
+					<Label for="arrivalDate">Data de chegada:</Label>
+					<p>
+						<DatePicker
+							onChange={this.onChange}
+							value={this.state.date} />
+					</p>
+				</FormGroup>
 
-					<FormGroup>
-						<Label for="numberOfPeople">Número de Pessoas</Label>
-						<Input type="select" name="numberOfPeople" id="numberOfPeople">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</Input>
-						</FormGroup>
-
-					<FormGroup>
-						<Label for="message">Mensagem:</Label>
-						<Input 
-							type="textarea"
-							name="message"
-							onChange={this.handleChange} />
+				<FormGroup>
+					<Label for="numberOfPeople">Número de Pessoas:</Label>
+					<Input type="select" name="numberOfPeople" id="numberOfPeople">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</Input>
 					</FormGroup>
 
-					<Button className="submit-button">Solicitar Orçamento</Button>
-				</Form>
+				<FormGroup>
+					<Label for="message">Mensagem:</Label>
+					<Input 
+						type="textarea"
+						name="message"
+						onChange={this.handleChange} />
+				</FormGroup>
 
-			</div>
+				<Button className="submit-button">Solicitar Orçamento</Button>
+			</Form>
+
+		</div>
     );
   }
 }

@@ -10,13 +10,25 @@
 }
 
 .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: #E0E0E0;
   color: white;
-  height: 120px;
+  height: 130px;
   padding-left: 10%;
   padding-right: 10%;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.social-media {
+
+}
+
+.logo-social-media {
+  height: 40px;
+  margin-left: 5px;
 }
 
 .menu {
