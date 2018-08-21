@@ -5,7 +5,13 @@ class Menu extends Component {
   render() {
     return (
 			<div className="menu">
-				Pacote em Grupo
+				<div className="menu-item">
+          Pacote em Grupo
+        </div>
+
+        <div className="menu-item">
+          Pacote Individual
+        </div>
 			</div>
     );
   }
