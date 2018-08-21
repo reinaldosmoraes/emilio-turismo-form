@@ -118,3 +118,15 @@
   border-radius: .25rem;
   padding: .375rem .75rem;
 }
+
+.decolar-iframe {
+  display: flex;
+  width: 80%;
+  height: 830px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border: 0px;
+}
