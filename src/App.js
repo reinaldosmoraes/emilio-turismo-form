@@ -13,7 +13,7 @@ class App extends Component {
         <Header />
         <Menu />
 
-        <DecolarForm />
+        <Content />
 
         <Footer />
       </div>

@@ -13,8 +13,11 @@ class Content extends Component {
 		this.state = {
 			name: '',
 			email: '',
-			message: '',
-			departureDate: new Date()
+			departureDate: '',
+			arrivalDate: '',
+			eventName: '',
+			numberOfPeople: '',
+			message: ''
 		}
 
 		this.handleChange = this.handleChange.bind(this)
@@ -22,7 +25,8 @@ class Content extends Component {
 	}
 
 	//date picker
-	onChange = date => this.setState({ date })
+	onChangeDepartureDate = departureDate => this.setState({ departureDate })
+	onChangeArrivalDate = arrivalDate => this.setState({ arrivalDate })
 
 	handleChange = e => {
 		this.setState({ [e.target.name]: e.target.value })
@@ -31,12 +35,17 @@ class Content extends Component {
 	async handleSubmit(e) {
 		e.preventDefault()
 
-		const {name, email, departureDate, message} = this.state
+		let {name, email, departureDate, arrivalDate, eventName, numberOfPeople, message} = this.state
+		departureDate = departureDate.toLocaleDateString()
+		arrivalDate = arrivalDate.toLocaleDateString()
 
 		const form = await axios.post('/api/form', {
 			name,
 			email,
 			departureDate,
+			arrivalDate,
+			eventName,
+			numberOfPeople,
 			message
 		})
 	}
@@ -65,16 +74,24 @@ class Content extends Component {
 					<Label className="label-container" for="departureDate">Data de partida</Label>
 						<DatePicker
 							className="date-picker"
-							onChange={this.onChange}
-							value={this.state.date} />
+							onChange={this.onChangeDepartureDate}
+							value={this.state.departureDate} />
 				</FormGroup>
 
 				<FormGroup className="form-group-container">
 					<Label className="label-container" for="arrivalDate">Data de chegada</Label>
 						<DatePicker
 							className="date-picker"
-							onChange={this.onChange}
-							value={this.state.date} />
+							onChange={this.onChangeArrivalDate}
+							value={this.state.arrivalDate} />
+				</FormGroup>
+
+				<FormGroup className="form-group-container">
+					<Label className="label-container" for="eventName">Nome do Evento</Label>
+					<Input 
+						type="text"
+						name="eventName"
+						onChange={this.handleChange} />
 				</FormGroup>
 
 				<FormGroup className="form-group-container">
