@@ -63,6 +63,7 @@
   width: 20%;
   justify-content: flex-end;
   margin-right: 10px;
+  margin-bottom: 0px;
   font-weight: bold;
 }
 
@@ -102,11 +103,14 @@
   margin: 0px;
 }
 
-.label-button {
-  display: flex;
-  flex-direction: row;  
-  width: 16.5%;
-  justify-content: flex-end;
-  margin-right: 10px;
-  font-weight: bold;
+.date-picker {
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  border-radius: .25rem;
+}
+
+.react-date-picker__button {
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  padding: .375rem .75rem;
 }

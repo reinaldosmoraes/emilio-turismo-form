@@ -63,20 +63,18 @@ class Content extends Component {
 
 				<FormGroup className="form-group-container">
 					<Label className="label-container" for="departureDate">Data de partida</Label>
-					
 						<DatePicker
+							className="date-picker"
 							onChange={this.onChange}
 							value={this.state.date} />
-					
 				</FormGroup>
 
-				<FormGroup>
-					<Label for="arrivalDate">Data de chegada</Label>
-					<p>
+				<FormGroup className="form-group-container">
+					<Label className="label-container" for="arrivalDate">Data de chegada</Label>
 						<DatePicker
+							className="date-picker"
 							onChange={this.onChange}
 							value={this.state.date} />
-					</p>
 				</FormGroup>
 
 				<FormGroup className="form-group-container">
@@ -99,8 +97,8 @@ class Content extends Component {
 				</FormGroup>
 
 				<FormGroup className="form-group-container">
-					<Label className="label-button"></Label>
-					<Button className="submit-button">Solicitar Orçamento</Button>
+					<Label className="label-container"></Label>
+					<Button className="form-control">Solicitar Orçamento</Button>
 				</FormGroup>
 				
 			</Form>
