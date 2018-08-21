@@ -98,7 +98,7 @@ class Content extends Component {
 							onChange={this.handleChange} />
 					</FormGroup>
 
-					<Button>Solicitar Orçamento</Button>
+					<Button className="submit-button">Solicitar Orçamento</Button>
 				</Form>
 
 			</div>
