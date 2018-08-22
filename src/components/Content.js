@@ -16,7 +16,7 @@ class Content extends Component {
 			departureDate: '',
 			arrivalDate: '',
 			eventName: '',
-			numberOfPeople: '',
+			numberOfPeople: '1',
 			message: ''
 		}
 
@@ -96,7 +96,7 @@ class Content extends Component {
 
 				<FormGroup className="form-group-container">
 					<Label className="label-container" for="numberOfPeople">Número de Pessoas</Label>
-					<Input type="select" name="numberOfPeople" id="numberOfPeople">
+					<Input type="select" name="numberOfPeople" id="numberOfPeople" onChange={this.handleChange}>
 						<option>1</option>
 						<option>2</option>
 						<option>3</option>
