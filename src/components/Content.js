@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, Input, Label, Button } from 'reactstrap';
+import { Form, FormGroup, Input, Label } from 'reactstrap';
 import axios from 'axios';
 import DatePicker from 'react-date-picker';
 
@@ -115,7 +115,7 @@ class Content extends Component {
 
 				<FormGroup className="form-group-container">
 					<Label className="label-container"></Label>
-					<Button className="form-control">Solicitar Orçamento</Button>
+					<button className="submit-button">Solicitar Orçamento</button>
 				</FormGroup>
 				
 			</Form>

@@ -120,8 +120,16 @@
 }
 
 .submit-button {
-  display: flex;
-  flex: 1;
+  background-color: #2AB2D8;
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+  background-clip: padding-box;
+  border-radius: .25rem;
 }
 .teste {
   display: flex;
