@@ -5,14 +5,16 @@ class Menu extends Component {
   render() {
     return (
 			<div className="menu">
-				<div className="menu-item">
-          Pacote em Grupo
+				<div className="menu-item-selected">
+          Orçamento Personalizado
         </div>
 
-        <div className="menu-item">
-          Pacote Individual
-        </div>
-			</div>
+        <a href="https://www.e-agencias.com.br/meviagens" className="menu-item">
+            Orçamento via Decolar.com
+        </a>
+        
+      </div>
+        
     );
   }
 }
