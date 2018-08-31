@@ -7,7 +7,7 @@ import '../App.css';
 
 class TravelForm extends Component {
 
-	constructor() {
+	constructor(props) {
 		super()
 
 		this.state = {
@@ -17,12 +17,14 @@ class TravelForm extends Component {
 			arrivalDate: '',
 			eventName: '',
 			numberOfPeople: '1',
-			message: ''
+			message: '',
+			onClick: props.onClick
 		}
 
 		this.handleChange = this.handleChange.bind(this)
 		this.handleSubmit = this.handleSubmit.bind(this)
 	}
+	
 
 	//date picker
 	onChangeDepartureDate = departureDate => this.setState({ departureDate })
@@ -35,6 +37,9 @@ class TravelForm extends Component {
 	async handleSubmit(e) {
 		e.preventDefault()
 
+		//setando a variavel que muda o conteudo para a tela de SubmittedForm
+		this.state.onClick()
+		
 		let {name, email, departureDate, arrivalDate, eventName, numberOfPeople, message} = this.state
 		departureDate = departureDate.toLocaleDateString()
 		arrivalDate = arrivalDate.toLocaleDateString()
@@ -48,6 +53,7 @@ class TravelForm extends Component {
 			numberOfPeople,
 			message
 		})
+
 	}
 
   	render() {
@@ -131,5 +137,3 @@ class TravelForm extends Component {
 }
 
 export default TravelForm;
-
-
