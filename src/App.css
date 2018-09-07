@@ -165,3 +165,16 @@
   padding-bottom: 20px;
   border: 0px;
 }
+
+.submitted-form {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 10%;
+  padding-right: 10%;
+  flex-direction: column;
+}
+
+.sub-title {
+  margin-bottom: 30px;
+}
