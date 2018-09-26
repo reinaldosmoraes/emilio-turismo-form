@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, Input, Label } from 'reactstrap';
+import { Form, FormGroup, Input, Label, Button } from 'reactstrap';
 import axios from 'axios';
 import DatePicker from 'react-date-picker';
 
@@ -40,13 +40,15 @@ class TravelForm extends Component {
 		//setando a variavel que muda o conteudo para a tela de SubmittedForm
 		this.state.onClick()
 		
-		let {name, email, departureDate, arrivalDate, eventName, numberOfPeople, message} = this.state
+		let {name, email, phone, city, departureDate, arrivalDate, eventName, numberOfPeople, message} = this.state
 		departureDate = departureDate.toLocaleDateString()
 		arrivalDate = arrivalDate.toLocaleDateString()
 
 		const form = await axios.post('/api/form', {
 			name,
 			email,
+			phone,
+			city,
 			departureDate,
 			arrivalDate,
 			eventName,
@@ -59,7 +61,15 @@ class TravelForm extends Component {
   	render() {
     return (
 		<div className="content">
+			
+			
 			<Form className="form" onSubmit={this.handleSubmit}>
+				
+				<div className="form-categories">
+					<Label className="label-categories">Dados Pessoais</Label>
+					<hr />
+				</div>
+			
 				<FormGroup className="form-group-container">
 					<Label className="label-container" for="name">Nome</Label>
 					<Input 
@@ -67,7 +77,7 @@ class TravelForm extends Component {
 						name="name"
 						onChange={this.handleChange} />
 				</FormGroup>
-				
+
 				<FormGroup className="form-group-container">
 					<Label className="label-container" for="email">Email</Label>
 					<Input 
@@ -75,6 +85,40 @@ class TravelForm extends Component {
 						name="email"
 						onChange={this.handleChange} />
 				</FormGroup>
+
+				<FormGroup className="form-group-container">
+					<Label className="label-container" for="phone">Telefone</Label>
+					<Input 
+						type="text"
+						name="phone"
+						onChange={this.handleChange} />
+				</FormGroup>
+
+				<FormGroup className="form-group-container">
+					<Label className="label-container" for="city">Cidade</Label>
+					<Input 
+						type="text"
+						name="city"
+						onChange={this.handleChange} />
+				</FormGroup>
+
+				<div className="form-categories">
+					<Label className="label-categories">Evento</Label>
+					<hr />
+				</div>
+
+				<FormGroup className="form-group-container">
+					<Label className="label-container" for="eventName">Nome do Evento</Label>
+					<Input 
+						type="text"
+						name="eventName"
+						onChange={this.handleChange} />
+				</FormGroup>
+
+				<div className="form-categories">
+					<Label className="label-categories">Aéreo</Label>
+					<hr />
+				</div>
 
 				<FormGroup className="form-group-container">
 					<Label className="label-container" for="departureDate">Data de partida</Label>
@@ -92,13 +136,20 @@ class TravelForm extends Component {
 							value={this.state.arrivalDate} />
 				</FormGroup>
 
-				<FormGroup className="form-group-container">
-					<Label className="label-container" for="eventName">Nome do Evento</Label>
-					<Input 
-						type="text"
-						name="eventName"
-						onChange={this.handleChange} />
-				</FormGroup>
+				<div className="form-categories">
+					<Label className="label-categories">Hotel</Label>
+					<hr />
+				</div>
+
+				<div className="form-categories">
+					<Label className="label-categories">Transfer</Label>
+					<hr />
+				</div>
+
+				<div className="form-categories">
+					<Label className="label-categories">Opicionais</Label>
+					<hr />
+				</div>
 
 				<FormGroup className="form-group-container">
 					<Label className="label-container" for="numberOfPeople">Número de Pessoas</Label>
@@ -126,7 +177,7 @@ class TravelForm extends Component {
 
 				<FormGroup className="form-group-container">
 					<Label className="label-container"></Label>
-					<button className="submit-button">Solicitar Orçamento</button>
+					<Button className="submit-button">Solicitar Orçamento</Button>
 				</FormGroup>
 				
 			</Form>

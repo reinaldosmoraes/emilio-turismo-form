@@ -84,17 +84,21 @@
 }
 .form-group-container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+}
+
+.form-categories {
+  display: flex;
+  margin: 10px;
+}
+
+.label-categories{
+  display: flex;
+  font-weight: bold;
 }
 
 .label-container {
   display: flex;
-  flex-direction: row;  
-  width: 20%;
-  justify-content: flex-end;
-  margin-right: 10px;
-  margin-bottom: 0px;
   font-weight: bold;
 }
 
@@ -142,14 +146,9 @@
   margin: 0px;
 }
 
-.date-picker {
-  width: 100%;
-  height: calc(2.25rem + 2px);
-  border-radius: .25rem;
-}
-
 .react-date-picker__button {
-  border: 1px solid #ced4da;
+  width: 100%;
+  border: 1px solid #ced4da !important;
   border-radius: .25rem;
   padding: .375rem .75rem;
 }
