@@ -67,7 +67,7 @@ class TravelForm extends Component {
 		<div className="content">
 			
 			
-			<Form className="form" onSubmit={this.handleSubmit}>
+			<Form className="form" >
 				
 				<PersonalData onChange={this.handleChange} />
 
@@ -135,7 +135,7 @@ class TravelForm extends Component {
 
 				<FormGroup className="form-group-container">
 					<Label className="label-container"></Label>
-					<Button className="submit-button">Solicitar Orçamento</Button>
+					<Button className="submit-button" onClick={this.handleSubmit}>Solicitar Orçamento</Button>
 				</FormGroup>
 				
 			</Form>
