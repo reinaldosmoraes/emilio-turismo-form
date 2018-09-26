@@ -2,6 +2,7 @@ import React from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import TravelForm from './TravelForm';
+import Content from './Content';
 
 export default class Tabs extends React.Component {
   constructor(props) {
@@ -62,7 +63,7 @@ export default class Tabs extends React.Component {
           <TabPane tabId="1">
             <Row>
               <Col sm="12">
-                <TravelForm />
+                <Content />
                 <Button onClick={() => { this.toggle('2'); }}>Ir para o proximo</Button>
               </Col>
             </Row>

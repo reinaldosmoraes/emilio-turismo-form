@@ -13,6 +13,8 @@ class TravelForm extends Component {
 		this.state = {
 			name: '',
 			email: '',
+			phone: '',
+			city: '',
 			departureDate: '',
 			arrivalDate: '',
 			eventName: '',
