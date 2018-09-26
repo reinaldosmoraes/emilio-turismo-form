@@ -4,6 +4,7 @@ import axios from 'axios';
 import DatePicker from 'react-date-picker';
 
 import '../App.css';
+import PersonalData from './PersonalData';
 
 class TravelForm extends Component {
 
@@ -67,42 +68,8 @@ class TravelForm extends Component {
 			
 			<Form className="form" onSubmit={this.handleSubmit}>
 				
-				<div className="form-categories">
-					<Label className="label-categories">Dados Pessoais</Label>
-					<hr />
-				</div>
-			
-				<FormGroup className="form-group-container">
-					<Label className="label-container" for="name">Nome</Label>
-					<Input 
-						type="text"
-						name="name"
-						onChange={this.handleChange} />
-				</FormGroup>
+				<PersonalData onChange={this.handleChange} />
 
-				<FormGroup className="form-group-container">
-					<Label className="label-container" for="email">Email</Label>
-					<Input 
-						type="email"
-						name="email"
-						onChange={this.handleChange} />
-				</FormGroup>
-
-				<FormGroup className="form-group-container">
-					<Label className="label-container" for="phone">Telefone</Label>
-					<Input 
-						type="text"
-						name="phone"
-						onChange={this.handleChange} />
-				</FormGroup>
-
-				<FormGroup className="form-group-container">
-					<Label className="label-container" for="city">Cidade</Label>
-					<Input 
-						type="text"
-						name="city"
-						onChange={this.handleChange} />
-				</FormGroup>
 
 				<div className="form-categories">
 					<Label className="label-categories">Evento</Label>
