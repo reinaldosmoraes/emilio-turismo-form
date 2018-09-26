@@ -11,11 +11,6 @@ class PersonalData extends Component {
     render() {
         return(
             <div>
-                <div className="form-categories">
-                    <Label className="label-categories">Dados Pessoais</Label>
-                    <hr />
-                </div>
-                
                 <FormGroup className="form-group-container">
                     <Label className="label-container" for="name">Nome</Label>
                     <Input 
@@ -47,7 +42,6 @@ class PersonalData extends Component {
                         name="city"
                         onChange={this.handleChange} />
                 </FormGroup>
-
             </div>
         )
     }

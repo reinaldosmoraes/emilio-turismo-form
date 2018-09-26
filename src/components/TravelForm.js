@@ -5,6 +5,7 @@ import DatePicker from 'react-date-picker';
 
 import '../App.css';
 import PersonalData from './PersonalData';
+import Events from './Events';
 
 class TravelForm extends Component {
 
@@ -70,19 +71,7 @@ class TravelForm extends Component {
 				
 				<PersonalData onChange={this.handleChange} />
 
-
-				<div className="form-categories">
-					<Label className="label-categories">Evento</Label>
-					<hr />
-				</div>
-
-				<FormGroup className="form-group-container">
-					<Label className="label-container" for="eventName">Nome do Evento</Label>
-					<Input 
-						type="text"
-						name="eventName"
-						onChange={this.handleChange} />
-				</FormGroup>
+				<Events onChange={this.handleChange} />
 
 				<div className="form-categories">
 					<Label className="label-categories">Aéreo</Label>
