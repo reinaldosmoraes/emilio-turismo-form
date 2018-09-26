@@ -42,7 +42,7 @@ class TravelForm extends Component {
 		e.preventDefault()
 
 		//setando a variavel que muda o conteudo para a tela de SubmittedForm
-		this.state.onClick()
+		//this.state.onClick()
 		
 		let {name, email, phone, city, departureDate, arrivalDate, eventName, numberOfPeople, message} = this.state
 		departureDate = departureDate.toLocaleDateString()

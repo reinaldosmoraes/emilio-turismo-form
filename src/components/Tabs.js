@@ -3,6 +3,8 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Ca
 import classnames from 'classnames';
 import TravelForm from './TravelForm';
 import Content from './Content';
+import SubmittedForm from './SubmittedForm';
+import PersonalData from './PersonalData';
 
 export default class Tabs extends React.Component {
   constructor(props) {
@@ -59,33 +61,26 @@ export default class Tabs extends React.Component {
           </NavItem>
 
         </Nav>
+        
         <TabContent activeTab={this.state.activeTab}>
-          <TabPane tabId="1">
+          
+					<TabPane tabId="1">
             <Row>
               <Col sm="12">
                 <Content />
-                <Button onClick={() => { this.toggle('2'); }}>Ir para o proximo</Button>
+                <Button onClick={() => { this.toggle('5'); }}>Ir para o proximo</Button>
               </Col>
             </Row>
           </TabPane>
+
           <TabPane tabId="2">
-            <Row>
-              <Col sm="6">
-                <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
-                </Card>
-              </Col>
-              <Col sm="6">
-                <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
-                </Card>
-              </Col>
-            </Row>
+						<PersonalData onChange={this.handleChange} />
           </TabPane>
+
+          <TabPane tabId="5">
+            <SubmittedForm />
+          </TabPane>
+
         </TabContent>
       </div>
     );
