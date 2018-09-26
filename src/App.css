@@ -72,6 +72,7 @@
 
 .content {
   display: flex;
+  flex-direction: column;
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 5px;
@@ -135,13 +136,7 @@
   background-clip: padding-box;
   border-radius: .25rem;
 }
-.teste {
-  display: flex;
-  flex: 1;
-  justify-content: flex-end;
-  flex-direction: row;
-  align-items: center;
-}
+
 .button {
   margin: 0px;
 }
@@ -176,4 +171,10 @@
 
 .sub-title {
   margin-bottom: 30px;
+}
+
+.nav {
+  justify-content: center;
+  background-color: #2AB2D8;
+  padding-top: 1rem;
 }
