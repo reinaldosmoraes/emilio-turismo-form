@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, Input, Label, Button } from 'reactstrap';
+import { FormGroup, Input, Label } from 'reactstrap';
 
 class Events extends Component {
 

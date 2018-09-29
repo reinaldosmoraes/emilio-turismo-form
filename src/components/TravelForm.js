@@ -4,8 +4,8 @@ import axios from 'axios';
 import DatePicker from 'react-date-picker';
 
 import '../App.css';
-import PersonalData from './PersonalData';
-import Events from './Events';
+import PersonalData from './tabs/PersonalData';
+import Event from './tabs/Event';
 
 class TravelForm extends Component {
 
@@ -71,7 +71,7 @@ class TravelForm extends Component {
 				
 				<PersonalData onChange={this.handleChange} />
 
-				<Events onChange={this.handleChange} />
+				<Event onChange={this.handleChange} />
 
 				<div className="form-categories">
 					<Label className="label-categories">Aéreo</Label>

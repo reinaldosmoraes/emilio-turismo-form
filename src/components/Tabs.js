@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Button, Row, Col, Form, FormGroup, Input, Label } from 'reactstrap';
 import classnames from 'classnames';
-import TravelForm from './TravelForm';
-import Content from './Content';
 import SubmittedForm from './SubmittedForm';
-import PersonalData from './PersonalData';
-import Events from './Events';
+import PersonalData from './tabs/PersonalData';
+import Event from './tabs/Event';
 import axios from 'axios';
 import DatePicker from 'react-date-picker';
 
@@ -126,7 +124,7 @@ export default class Tabs extends React.Component {
           </TabPane>
 
           <TabPane tabId="2">
-						<Events onChange={this.handleChange} />
+						<Event onChange={this.handleChange} />
           </TabPane>
 
 					<TabPane tabId="3">
