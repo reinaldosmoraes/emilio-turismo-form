@@ -93,13 +93,7 @@
   margin: 10px;
 }
 
-.label-categories{
-  display: flex;
-  font-weight: bold;
-}
-
-.label-container {
-  display: flex;
+.bold {
   font-weight: bold;
 }
 
@@ -162,10 +156,6 @@
 
 .submitted-form {
   display: flex;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding-left: 10%;
-  padding-right: 10%;
   flex-direction: column;
 }
 
@@ -177,4 +167,11 @@
   justify-content: center;
   background-color: #2AB2D8;
   padding-top: 1rem;
+}
+
+.content-padding {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }

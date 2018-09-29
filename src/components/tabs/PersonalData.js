@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, Input, Label, Button } from 'reactstrap';
+import { FormGroup, Input, Label } from 'reactstrap';
 
 class PersonalData extends Component {
 
@@ -11,32 +11,32 @@ class PersonalData extends Component {
     render() {
         return(
             <div>
-                <FormGroup className="form-group-container">
-                    <Label className="label-container" for="name">Nome</Label>
+                <FormGroup>
+                    <Label className="bold" for="name">Nome</Label>
                     <Input 
                         type="text"
                         name="name"
                         onChange={this.handleChange} />
                 </FormGroup>
 
-                <FormGroup className="form-group-container">
-                    <Label className="label-container" for="email">Email</Label>
+                <FormGroup>
+                    <Label className="bold" for="email">Email</Label>
                     <Input 
                         type="email"
                         name="email"
                         onChange={this.handleChange} />
                 </FormGroup>
 
-                <FormGroup className="form-group-container">
-                    <Label className="label-container" for="phone">Telefone</Label>
+                <FormGroup>
+                    <Label className="bold" for="phone">Telefone</Label>
                     <Input 
                         type="text"
                         name="phone"
                         onChange={this.handleChange} />
                 </FormGroup>
 
-                <FormGroup className="form-group-container">
-                    <Label className="label-container" for="city">Cidade</Label>
+                <FormGroup>
+                    <Label className="bold" for="city">Cidade</Label>
                     <Input 
                         type="text"
                         name="city"

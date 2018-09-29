@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Button, Row, Col, Form, FormGroup, Input, Label } from 'reactstrap';
+import React from 'react';
+import { TabContent, TabPane, Nav, NavItem, NavLink, FormGroup, Label } from 'reactstrap';
 import classnames from 'classnames';
 import SubmittedForm from './SubmittedForm';
 import PersonalData from './tabs/PersonalData';
@@ -117,7 +117,7 @@ export default class Tabs extends React.Component {
           </NavItem>
         </Nav>
         
-        <TabContent activeTab={this.state.activeTab}>
+        <TabContent className="content-padding" activeTab={this.state.activeTab}>
           
 					<TabPane tabId="1">
 						<PersonalData onChange={this.handleChange} />
@@ -133,7 +133,7 @@ export default class Tabs extends React.Component {
 
 					<TabPane tabId="4">
 						<FormGroup className="form-group-container">
-						<Label className="label-container" for="departureDate">Data de partida</Label>
+						<Label className="bold" for="departureDate">Data de partida</Label>
 							<DatePicker
 								className="date-picker"
 								onChange={this.onChangeDepartureDate}
@@ -141,7 +141,7 @@ export default class Tabs extends React.Component {
 						</FormGroup>
 
 						<FormGroup className="form-group-container">
-							<Label className="label-container" for="arrivalDate">Data de chegada</Label>
+							<Label className="bold" for="arrivalDate">Data de chegada</Label>
 								<DatePicker
 									className="date-picker"
 									onChange={this.onChangeArrivalDate}

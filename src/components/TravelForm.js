@@ -73,13 +73,8 @@ class TravelForm extends Component {
 
 				<Event onChange={this.handleChange} />
 
-				<div className="form-categories">
-					<Label className="label-categories">Aéreo</Label>
-					<hr />
-				</div>
-
 				<FormGroup className="form-group-container">
-					<Label className="label-container" for="departureDate">Data de partida</Label>
+					<Label className="bold" for="departureDate">Data de partida</Label>
 						<DatePicker
 							className="date-picker"
 							onChange={this.onChangeDepartureDate}
@@ -87,7 +82,7 @@ class TravelForm extends Component {
 				</FormGroup>
 
 				<FormGroup className="form-group-container">
-					<Label className="label-container" for="arrivalDate">Data de chegada</Label>
+					<Label className="bold" for="arrivalDate">Data de chegada</Label>
 						<DatePicker
 							className="date-picker"
 							onChange={this.onChangeArrivalDate}
@@ -95,22 +90,22 @@ class TravelForm extends Component {
 				</FormGroup>
 
 				<div className="form-categories">
-					<Label className="label-categories">Hotel</Label>
+					<Label>Hotel</Label>
 					<hr />
 				</div>
 
 				<div className="form-categories">
-					<Label className="label-categories">Transfer</Label>
+					<Label>Transfer</Label>
 					<hr />
 				</div>
 
 				<div className="form-categories">
-					<Label className="label-categories">Opicionais</Label>
+					<Label>Opicionais</Label>
 					<hr />
 				</div>
 
 				<FormGroup className="form-group-container">
-					<Label className="label-container" for="numberOfPeople">Número de Pessoas</Label>
+					<Label className="bold" for="numberOfPeople">Número de Pessoas</Label>
 					<Input type="select" name="numberOfPeople" id="numberOfPeople" onChange={this.handleChange}>
 						<option>1</option>
 						<option>2</option>
@@ -126,7 +121,7 @@ class TravelForm extends Component {
 				</FormGroup>
 
 				<FormGroup className="form-group-container">
-					<Label className="label-container" for="message">Mensagem</Label>
+					<Label className="bold" for="message">Mensagem</Label>
 					<Input
 						type="textarea"
 						name="message"
@@ -134,7 +129,7 @@ class TravelForm extends Component {
 				</FormGroup>
 
 				<FormGroup className="form-group-container">
-					<Label className="label-container"></Label>
+					<Label className="bold"></Label>
 					<Button className="submit-button" onClick={this.handleSubmit}>Solicitar Orçamento</Button>
 				</FormGroup>
 				

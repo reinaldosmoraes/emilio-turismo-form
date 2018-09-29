@@ -11,8 +11,8 @@ class Events extends Component {
     render() {
         return(
             <div>
-                <FormGroup className="form-group-container">
-					<Label className="label-container" for="eventName">Nome do Evento</Label>
+                <FormGroup>
+					<Label className="bold" for="eventName">Nome do Evento</Label>
 					<Input 
 						type="text"
 						name="eventName"
