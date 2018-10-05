@@ -1,9 +1,10 @@
 import React from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, FormGroup, Label } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, FormGroup, Label, Button, Input } from 'reactstrap';
 import classnames from 'classnames';
 import SubmittedForm from './SubmittedForm';
 import PersonalData from './tabs/PersonalData';
 import Event from './tabs/Event';
+import Buttons from './Buttons';
 import axios from 'axios';
 import DatePicker from 'react-date-picker';
 
@@ -21,17 +22,39 @@ export default class Tabs extends React.Component {
 			email: '',
 			phone: '',
 			city: '',
+			eventName: '',
+			eventPlace: '',
 			departureDate: '',
 			arrivalDate: '',
-			eventName: '',
+			checkBox: false,
 			numberOfPeople: '1',
 			message: ''
 		};
 		
 		this.handleChange = this.handleChange.bind(this)
 		this.handleSubmit = this.handleSubmit.bind(this)
+		this.handleInputChange = this.handleInputChange.bind(this);
   }
 
+	//teste de checkbox
+	handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+	toggle(tab) {
+    if (this.state.activeTab !== tab) {
+      this.setState({
+        activeTab: tab
+      });
+    }
+	}
+	
 	//date picker
 	onChangeDepartureDate = departureDate => this.setState({ departureDate })
 	onChangeArrivalDate = arrivalDate => this.setState({ arrivalDate })
@@ -42,13 +65,15 @@ export default class Tabs extends React.Component {
 
 	async handleSubmit(e) {
 		e.preventDefault()
-
-		//setando a variavel que muda o conteudo para a tela de SubmittedForm
-		//this.state.onClick()
 		
-		let {name, email, phone, city, departureDate, arrivalDate, eventName, numberOfPeople, message} = this.state
-		departureDate = departureDate.toLocaleDateString()
-		arrivalDate = arrivalDate.toLocaleDateString()
+		let {name, email, phone, city, departureDate, arrivalDate, eventName, eventPlace, numberOfPeople, message} = this.state
+		
+		if(this.state.departureDate == undefined){
+			departureDate = departureDate.toLocaleDateString()
+		}
+		if(this.state.arrivalDate == undefined){
+			arrivalDate = arrivalDate.toLocaleDateString()
+		}
 
 		const form = await axios.post('/api/form', {
 			name,
@@ -58,20 +83,16 @@ export default class Tabs extends React.Component {
 			departureDate,
 			arrivalDate,
 			eventName,
+			eventPlace,
 			numberOfPeople,
 			message
 		})
 
+		//encaminhar para tela de formulario enviado
+		// onClick={() => { this.toggle('5') }}
 	}
 
-
-  toggle(tab) {
-    if (this.state.activeTab !== tab) {
-      this.setState({
-        activeTab: tab
-      });
-    }
-  }
+  
   render() {
     return (
       <div>
@@ -96,7 +117,7 @@ export default class Tabs extends React.Component {
             <NavLink
               className={classnames({ active: this.state.activeTab === '3' })}
               onClick={() => { this.toggle('3'); }} >
-              Passsagem
+              Passagem
             </NavLink>
           </NavItem>
 
@@ -121,17 +142,22 @@ export default class Tabs extends React.Component {
           
 					<TabPane tabId="1">
 						<PersonalData onChange={this.handleChange} />
+						<div className="row-buttons">
+							<Button className="submit-button" onClick={this.handleSubmit}>Solicitar Orçamento</Button>
+							<Button className="next-tab-button" onClick={() => { this.toggle('2'); }}>Avançar</Button>
+						</div>
           </TabPane>
 
           <TabPane tabId="2">
 						<Event onChange={this.handleChange} />
+						<div className="row-buttons">
+							<Button className="submit-button" onClick={this.handleSubmit}>Solicitar Orçamento</Button>
+							<Button className="next-tab-button" onClick={() => { this.toggle('3'); }}>Avançar</Button>
+						</div>
           </TabPane>
 
 					<TabPane tabId="3">
-						
-          </TabPane>
 
-					<TabPane tabId="4">
 						<FormGroup className="form-group-container">
 						<Label className="bold" for="departureDate">Data de partida</Label>
 							<DatePicker
@@ -147,11 +173,68 @@ export default class Tabs extends React.Component {
 									onChange={this.onChangeArrivalDate}
 									value={this.state.arrivalDate} />
 						</FormGroup>
+
+						<FormGroup className="form-group-container">
+							<Label className="bold" for="numberOfPeople">Número de Pessoas</Label>
+							<Input type="select" name="numberOfPeople" id="numberOfPeople" onChange={this.handleChange}>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+							</Input>
+						</FormGroup>
+
+
+						<FormGroup className="form-group-container">
+							<Label className="bold" for="message">Mensagem</Label>
+							<Input
+								type="textarea"
+								name="message"
+								onChange={this.handleChange} />
+						</FormGroup>
+
+						<div className="row-buttons">
+							<Button className="submit-button" onClick={this.handleSubmit}>Solicitar Orçamento</Button>
+							<Button className="next-tab-button" onClick={() => { this.toggle('4'); }}>Avançar</Button>
+						</div>
+          </TabPane>
+
+					<TabPane tabId="4">
+						
+
+						<div className="row-buttons">
+							<Button className="submit-button" onClick={this.handleSubmit}>Solicitar Orçamento</Button>
+							<Button className="next-tab-button" onClick={() => { this.toggle('5'); }}>Avançar</Button>
+						</div>
           </TabPane>
 
           <TabPane tabId="5">
-            <SubmittedForm />
+						<FormGroup check>
+							<Label check>
+								<Input 
+									type="checkbox" 
+									name="checkBox"
+									checked={this.state.checkBox}
+            			onChange={this.handleInputChange} />{' '}
+								Check me out
+							</Label>
+						</FormGroup>
+
+						<div className="row-buttons">
+							<Button className="submit-button" onClick={this.handleSubmit}>Solicitar Orçamento</Button>
+						</div>
           </TabPane>
+
+					<TabPane tabId="6">
+						<SubmittedForm />
+          </TabPane>
+					
 
         </TabContent>
       </div>

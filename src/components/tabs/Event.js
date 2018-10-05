@@ -18,6 +18,14 @@ class Events extends Component {
 						name="eventName"
 						onChange={this.handleChange} />
 				</FormGroup>
+
+                <FormGroup>
+					<Label className="bold" for="eventPlace">Local do Evento</Label>
+					<Input 
+						type="text"
+						name="eventPlace"
+						onChange={this.handleChange} />
+				</FormGroup>
             </div>
         )
     }

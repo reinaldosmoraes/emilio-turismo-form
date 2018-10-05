@@ -1,4 +1,9 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .logo {
@@ -98,8 +103,10 @@
 }
 
 .footer {
-  display: flex;
-  flex-direction: column;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: #2AB2D8;
   color: white;
   padding-left: 10%;
@@ -129,8 +136,22 @@
   color: white;
   background-clip: padding-box;
   border-radius: .25rem;
+  margin-right: 0.5rem;
 }
 
+.next-tab-button {
+  background-color: #2AB2D8;
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+  background-clip: padding-box;
+  border-radius: .25rem;
+  margin-left: 0.5rem;
+}
 .button {
   margin: 0px;
 }
@@ -174,4 +195,9 @@
   padding-right: 10%;
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.row-buttons {
+  display: flex;
+  flex-direction: row;
 }
